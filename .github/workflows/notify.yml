@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   notify:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
     if: github.event.repository.fork == false && (github.event.workflow_run.conclusion == 'success' || (github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.run_attempt >= 3) || github.event.workflow_run.conclusion == 'cancelled')
     steps:
       - uses: actions/checkout@v6
